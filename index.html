@@ -1,21 +1,16 @@
 <p></p>
 <!--
+
 -->
-<p> </p>
+<p>  {block:Description}</p>
+<p>{/block:Description}</p>
 <!--metas-->
 <p></p>
-<p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-</p>
 <p></p>
 <!--font-->
 <p></p>
-<!--videos-->
-<p>
-<script src="//static.tumblr.com/fwgzvyf/Oj1o08f6h/shythemes.vr.js"></script>
-</p>
-<!--scripts-->
-<p>
+<!--videos--><!--scripts-->
 <script src="http://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
 <script>
 (function($){
@@ -29,26 +24,119 @@ attribute:"title"
 });
 })(jQuery);
 </script>
-</p>
 <p></p>
-<p>
 <script src="https://static.tumblr.com/qudkd6d/Az6nkemqr/pxuphotoset.min.js"></script>
 <script src="https://dl.dropboxusercontent.com/s/lkc34gq5tgmwqj0/basics.js?dl=0"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
-</p>
-<header><span style="color: #000000;"><a class="t" href="/" style="color: #000000;">Leyi Lei</a></span> <i>one and only</i></header>
+<header><a class="t" href="/">{Title}</a> <i>{text:tagline}</i></header>
 <aside>
 <section>
 <h1>biography</h1>
-<div class="d">21 yo half-adult trying to up her SEO results</div>
+<div class="d">{Description}</div>
 </section>
 <nav>
 <h1>navigation</h1>
-<div class="n"><a href="/">work</a><a href="/ask">about</a><a href="/archive">blog</a></div>
+<div class="n"><a href="/">home</a><a href="/ask">message</a><a href="/archive">history</a></div>
 </nav></aside>
-<div class="stuff"></div>
-<p></p>
-<p>
+<div class="stuff">
+<div class="entries">{block:Posts}
+<div class="posts">{block:Text}
+<div class="q">{block:Title}
+<h1>{Title}</h1>
+{/block:Title} {block:NotReblog}
+<div class="txt">{Body}</div>
+{/block:NotReblog} {block:RebloggedFrom}
+<div class="txt">{block:Reblogs} <a class="user" block:haspermalink="" href="{Permalink}">{Username}</a> {Body} {/block:Reblogs}</div>
+{/block:RebloggedFrom}</div>
+{/block:Text} {block:Photo}
+<div class="q">{LinkOpenTag}<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}" /></a>{LinkCloseTag}{block:Caption}{block:NotReblog}
+<div class="caption">{Caption}</div>
+{/block:NotReblog}{block:RebloggedFrom}
+<div class="caption">{block:Reblogs}<a class="user" block:haspermalink="" href="{Permalink}">{Username}</a> {Body}{/block:Reblogs}</div>
+{/block:RebloggedFrom}{/block:Caption}</div>
+{/block:Photo} {block:Photoset}
+<div class="q">
+<div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}
+<div class="photo-data">
+<div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" /></div>
+<a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>
+{/block:Photos}</div>
+{block:Caption}{block:NotReblog}
+<div class="caption">{Caption}</div>
+{/block:NotReblog}{block:RebloggedFrom}
+<div class="caption">{block:Reblogs}<a class="user" block:haspermalink="" href="{Permalink}">{Username}</a> {Body}{/block:Reblogs}</div>
+{/block:RebloggedFrom}{/block:Caption}</div>
+{/block:Photoset} {block:Quote}
+<div class="q txt">
+<div class="quote">{Quote}</div>
+{block:Source}
+<div class="quotesource">{Source}</div>
+{/block:Source}</div>
+{/block:Quote} {block:Link}
+<div class="q txt">
+<h1><a href="{URL}" target="">{Name}</a></h1>
+{block:Description}{block:NotReblog}
+<div class="caption">{Descriptionn}</div>
+{/block:NotReblog}{block:RebloggedFrom}
+<div class="caption">{block:Reblogs}<a class="user" block:haspermalink="" href="{Permalink}">{Username}</a> {Body}{/block:Reblogs}</div>
+{/block:RebloggedFrom}{/block:Description}</div>
+{/block:Link} {block:Chat}
+<div class="q txt">{block:Title}
+<h1>{Title}</h1>
+{/block:Title}
+<div class="chat">{block:Lines}
+<ul>
+<li class="line {Alt}">{block:Label} <span class="label"> {Label}</span> {/block:Label}{Line}</li>
+</ul>
+{/block:Lines}</div>
+</div>
+{/block:Chat} {block:Audio}
+<div class="q txt">{block:AudioPlayer}
+<div class="player">{AudioPlayerWhite}</div>
+<div class="audio_d">{block:TrackName}<b>{TrackName}</b>{/block:TrackName}{block:Artist} : {Artist} {/block:Artist}</div>
+{/block:AudioPlayer} {block:Caption}{block:NotReblog}
+<div class="caption">{Caption}</div>
+{/block:NotReblog}{block:RebloggedFrom}
+<div class="caption">{block:Reblogs}<a class="user" block:haspermalink="" href="{Permalink}">{Username}</a> {Body}{/block:Reblogs}</div>
+{/block:RebloggedFrom}{/block:Caption}</div>
+{/block:Audio} {block:Video}
+<div class="q">
+<div class="video iframe">{Video-500}</div>
+{block:Caption}{block:NotReblog}
+<div class="caption">{Caption}</div>
+{/block:NotReblog}{block:RebloggedFrom}
+<div class="caption">{block:Reblogs}<a class="user" block:haspermalink="" href="{Permalink}">{Username}</a> {Body}{/block:Reblogs}</div>
+{/block:RebloggedFrom}{/block:Caption}</div>
+{/block:Video} {block:Answer}
+<div class="q txt">
+<div class="question">
+<div class="asker">{Asker}</div>
+{Question}</div>
+{block:Answerer}
+<div class="answer">{Answerer}{Answer}</div>
+{/block:Answerer} {block:NotReblog}
+<div class="answer">{Answer}</div>
+{/block:NotReblog} {block:RebloggedFrom}
+<div class="txt">{block:Reblogs}<a class="user" style="margin-top: 10px;" block:haspermalink="" href="{Permalink}">{Username}</a>{Body}{/block:Reblogs}</div>
+{/block:RebloggedFrom}</div>
+{/block:Answer} {block:date}
+<div class="inf">{block:indexpage} <a href="{Permalink}" class="nc">{NoteCount}</a> <i class="day"><b>{DayOfWeek}, {TimeAgo}</b></i> {block:ifshowtags} {block:HasTags}
+<div class="tags">{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}</div>
+{/block:HasTags} {/block:ifshowtags} {/block:indexpage} {block:permalinkpage} <a class="nc" href="{Permalink}">{NoteCountWithLabel}</a> <i class="day"><b>{DayOfWeek}, {TimeAgo}</b></i> {block:RebloggedFrom} <br /> <a href="{ReblogParentURL}">via {ReblogParentName}</a> {block:ContentSource} . <a href="{ReblogRootURL}">source {ReblogRootName}</a>{/block:ContentSource} {/block:RebloggedFrom} {block:HasTags} <br />
+<div class="tags">{block:Tags} <a href="{TagURL}">#{Tag}</a> {/block:Tags}</div>
+{/block:HasTags} {/block:permalinkpage}</div>
+{/block:date} {block:PostNotes}{PostNotes}{/block:PostNotes}</div>
+{/block:Posts}</div>
+{block:indexpage}<footer>{block:ifloadmore} <a id="more" style="cursor: help;"></a>load more posts {/block:ifloadmore} {block:Pagination}
+<div id="pagination">{block:previouspage}<a href="{PreviousPage}">prev</a>{/block:PreviousPage}{block:JumpPagination length="4"}{block:CurrentPage}<span class="current_page">{PageNumber}</span>{/block:CurrentPage}{block:JumpPage}<a class="jump_page" href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<a class="next" href="{NextPage}">next</a>{/block:nextpage}</div>
+{/block:Pagination}</footer>{/block:indexpage}</div>
+<p>{block:ContentSource}&lt;!&ndash; {SourceURL}{block:SourceLogo}<img src="&ldquo;{BlackLogoURL}&rdquo;" width="&ldquo;{LogoWidth}&rdquo;" height="&ldquo;{LogoHeight}&rdquo;" alt="&ldquo;{SourceTitle}&rdquo;" /> {/block:SourceLogo}{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} &ndash;&gt;{/block:ContentSource}{block:ReblogParent}{/block:ReblogParent}</p>
+<div id="fuckchad"><a href="http://odeysseus.tumblr.com">O</a></div>
+<p>{block:ifscrolltotop}</p>
+<div class="sc"><a href="#">scroll to top</a></div>
+<p>{/block:ifscrolltotop} {block:indexpage}{block:ifinfinitescroll}</p>
+<script src="http://static.tumblr.com/wgijwsy/u2vm2hxv6/jquery.infinitescroll.min.js"></script>
+<p>{/block:ifinfinitescroll}{/block:indexpage}</p>
 <script>
 $(document).ready(function(){
     var $container = $('.entries');
@@ -95,4 +183,3 @@ $(document).ready(function(){
         {/block:ifinfinitescroll}
 });
 </script>
-</p>
