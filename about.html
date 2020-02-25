@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Merriweather", sans-serif}
+body {font-size:12px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-white w3-collapse w3-top w3-medium w3-padding" style="z-index:3;width:200px;font-weight:normal;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()"</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64">
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item">Leyi<br>Lei</a></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">work</a> 
+    <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">about</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-white w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Leyi Lei</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="about">
+    <h1 class="w3-xxxlarge w3-text-orange"><b>project1</b></h1>
+  </div>
+  
+    <!-- about -->
+  <div class="w3-container" id="about" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-orange"><b>about</b></h1>
+    <p>I'm Leyi, a junior at the University of Washington studying Psychology and Marketing with an interest in UX Design. </p>
+    <p>I started my journey with an inherent fascination in the subject of Psychology. Specifically, I wanted to understand how
+      people made choices and how they interacted with marketing strategies, messages, and stories. I realized that people were the
+      ones to place value in those messages, and their perception constantly shifted with new products and technology. The application
+      of Psychology in designing user experiences naturally came together as I found myself abundantly curious about user behavior
+      and questions like: how do you design a bouncy house that maximizes bounce time knowing human inability to suppress nausea? 
+      </p>
+    <p>When I'm not engrossed in consumer psychology, marketing, or design, I enjoy eating vegetables and making comics.</p>
+    <p>Please feel free to get in touch with me if you want to chat about other human-centered things!</p>
+    <p>leyilei77@gmail.com</p>
+    <p>P.S. In the process of making this site using HTML for the first time so things are a bit wonky. Sorry!</p>
+  </div>
+
+
+<!-- End page content -->
+</div>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
