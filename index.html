@@ -207,65 +207,6 @@ hr { width:100%;background:#eee;height:1px;border:none;display:block;margin:10px
 big { font-size:calc({text:font size} + 0.5px); }
 h1,h2,h3,h4,h5,h6 { padding:0;margin:10px 0;font-size:13px;color:{color:accent dark};font-weight:600;text-transform:lowercase;} h1 i { font-style:normal;} h1 a,h1 i a { color:{color:accent dark};} .posts img, .posts li, .posts blockquote { max-width: 100%;height:auto}
 
-/* posts */
-
-
-.entries { margin:150px 450px 80px; width:{select:post width};}
-
-.posts {
-position:relative;width:{select:post width};margin-bottom:120px;
--webkit-animation-name: fadein;-webkit-animation-duration: 2s;
-}
-
-
- /* captions */
-
-.caption {
-    margin-top:10px;
-    {block:ifhidecaption}
-    {block:indexpage}
-    display:none;
-    {/block:indexpage}
-    {/block:ifhidecaption}
-
-}
- 
-.user,a.user,.asker,.asker a,a.answerer { color:{color:accent dark};font-weight:600;}
-.user,.answerer { display:block;margin-top:10px;margin-bottom:-10px;}
-.user:first-of-type { margin-top:0;}
-
-/* notes */
-
-ol.notes { margin-top:20px;list-style-type:none;font-style:normal;}
-li.note { padding:0;margin:2px 0px;font-style:normal; }
-.notes_loading, .more_notes_link { font-weight:bold;float:left;text-align:left!important;text-transform:lowercase;}
-.notes img { display:none!important; }
-ol.notes li.note blockquote { padding:4px 10px;margin:5px 0px 0px 15px;}
-
-/* quotes */
-
-.quote { font-size:13px;color:{color:accent dark}; } .quotesource { font-style:italic;margin-top:5px;}
-.quotesource .tumblr_blog { top:0px;position:relative;}
-
-/* chat */
-
-.chat { list-style:none;}
-.line { list-style:none;}
-.line.odd { background:#fff; }
-.label { color:{color:accent dark};margin-right:5px;}
-
-/* asks */
-
-.asker a:hover,.answer b a:hover { color:{color:accent}} .answer b a { color:{color:accent dark};} .asker { text-transform:lowercase; }
-.question { font-style:italic; } .asker,.answerer { font-style:normal;font-weight:600; }
-
-/* audio */ 
-
-.player { display:inline-block;width:50px;background:#fff;height:50px;overflow:hidden;margin-bottom:-5px;}
-.audio_d { float:right;padding:15px 10px;width:calc({select:post width} - 130px );background:#fff;}
-.tumblr_audio_player { background:#fff!important; }
-.tumblr_audio_player { width:40px;margin:10px 7px;height:40px;overflow:hidden;}
-iframe.spotify_audio_player { height:80px;overflow-y:hidden!important; }
 
 /* lightboxes */
 
