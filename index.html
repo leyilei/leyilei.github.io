@@ -2,25 +2,12 @@
 <head>
  
 <!--
-
-
-
-
-
-
                              x
                             
                            x
-
-
-
-
-
-
                     
                         
 x
-
 -->
  
 <link rel="shortcut icon" href="{Favicon}">
@@ -411,145 +398,11 @@ attribute:"title"
 <aside>
 
 <section><h1>biography</h1><div class="d">{Description}</div></section>
-<nav><h1>navigation</h1><div class="n"><a href="/">home</a><a href="/ask">message</a><a href="/archive">history</a>{block:iflink1}<a href="{text:link 1 url}">{text:link 1}</a>{/block:iflink1}{block:iflink2}<a href="{text:link 2 url}">{text:link 2}</a>{/block:iflink2}{block:iflink3}<a href="{text:link 3 url}">{text:link 3}</a>{/block:iflink3}</div></nav></aside>
-<div class="stuff">
-<div class="entries">
-{block:Posts}
-<div class="posts">
+<nav><h1>navigation</h1><div class="n"><a href="/">home</a><a href="/ask">message</a><a href="/archive">history</a>
 
-{block:Text}
-<div class="q">{block:Title}<h1>{Title}</h1>{/block:Title} {block:NotReblog}<div class="txt">{Body}</div>{/block:NotReblog} {block:RebloggedFrom}<div class="txt">{block:Reblogs} <a class="user" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink}>{Username}</a> {Body} {/block:Reblogs}</div>{/block:RebloggedFrom}</div>{/block:Text}
-
-{block:Photo} <div class="q"> {LinkOpenTag}<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}"></a>{LinkCloseTag}{block:Caption}{block:NotReblog}<div class="caption">{Caption}</div>{/block:NotReblog}{block:RebloggedFrom}<div class="caption">{block:Reblogs}<a class="user" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink}>{Username}</a> {Body}{/block:Reblogs}</div>{/block:RebloggedFrom}{/block:Caption}</div>{/block:Photo}
- 
-{block:Photoset}<div class="q"><div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div>{block:Caption}{block:NotReblog}<div class="caption">{Caption}</div>{/block:NotReblog}{block:RebloggedFrom}<div class="caption">{block:Reblogs}<a class="user" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink}>{Username}</a> {Body}{/block:Reblogs}</div>{/block:RebloggedFrom}{/block:Caption}</div>{/block:Photoset}
- 
- 
-{block:Quote}<div class="q txt"><div class="quote">{Quote}</div>{block:Source}<div class="quotesource">{Source}</div>{/block:Source}</div>{/block:Quote}
- 
-{block:Link}<div class="q txt"><h1><a href="{URL}" {Target}>{Name}</a></h1>{block:Description}{block:NotReblog}<div class="caption">{Descriptionn}</div>{/block:NotReblog}{block:RebloggedFrom}<div class="caption">{block:Reblogs}<a class="user" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink}>{Username}</a> {Body}{/block:Reblogs}</div>{/block:RebloggedFrom}{/block:Description}</div>{/block:Link}
- 
- 
-{block:Chat}<div class="q txt">{block:Title}<h1>{Title}</h1>{/block:Title} <div class="chat"> {block:Lines} <li class="line {Alt}"> {block:Label} <span class="label"> {Label}</span> {/block:Label}{Line}</li> {/block:Lines}</div></div>{/block:Chat}
- 
- 
-{block:Audio}<div class="q txt">{block:AudioPlayer}<div class="player"> {AudioPlayerWhite}</div><div class="audio_d">{block:TrackName}<b>{TrackName}</b>{/block:TrackName}{block:Artist} : {Artist} {/block:Artist}</div>{/block:AudioPlayer} {block:Caption}{block:NotReblog}<div class="caption">{Caption}</div>{/block:NotReblog}{block:RebloggedFrom}<div class="caption">{block:Reblogs}<a class="user" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink}>{Username}</a> {Body}{/block:Reblogs}</div>{/block:RebloggedFrom}{/block:Caption}</div>{/block:Audio}
- 
- 
-{block:Video}<div class="q"><div class="video iframe">{Video-500}</div>{block:Caption}{block:NotReblog}<div class="caption">{Caption}</div>{/block:NotReblog}{block:RebloggedFrom}<div class="caption">{block:Reblogs}<a class="user" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink}>{Username}</a> {Body}{/block:Reblogs}</div>{/block:RebloggedFrom}{/block:Caption}</div>{/block:Video}
-
-{block:Answer}<div class="q txt"><div class="question"> <div class="asker">{Asker}</div> {Question}</div>{block:Answerer}<div class="answer">{Answerer}{Answer}</div>{/block:Answerer} {block:NotReblog}<div class="answer">{Answer}</div>{/block:NotReblog} {block:RebloggedFrom}<div class="txt">{block:Reblogs}<a class="user" style="margin-top:10px" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink}>{Username}</a>{Body}{/block:Reblogs}</div>{/block:RebloggedFrom}</div>{/block:Answer}
 
  
-{block:date}
-<div class="inf">
 
-{block:indexpage}
-<a href="{Permalink}" class="nc">{NoteCount}</a> <i class="day"><b>{DayOfWeek}, {TimeAgo}</b></i>
-{block:ifshowtags}
-{block:HasTags}
-<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>
-{/block:HasTags}
-{/block:ifshowtags}
-{/block:indexpage}
- 
- 
-{block:permalinkpage}
-<a class="nc" href="{Permalink}">{NoteCountWithLabel}</a> <i class="day"><b>{DayOfWeek}, {TimeAgo}</b></i>
-{block:RebloggedFrom} 
-<br> <a href="{ReblogParentURL}">via {ReblogParentName}</a>
-{block:ContentSource} . <a href="{ReblogRootURL}" >source {ReblogRootName}</a>{/block:ContentSource}
-{/block:RebloggedFrom}
-{block:HasTags}
-<br><div class="tags">
-{block:Tags}
-<a href="{TagURL}">#{Tag}</a>
-{/block:Tags}
-</div>
-{/block:HasTags}
-{/block:permalinkpage}
-
-</div>
-{/block:date}
- 
- 
-{block:PostNotes}{PostNotes}{/block:PostNotes}
-</div>
-{/block:Posts}
-</div>
-
-{block:indexpage}
-<footer>
-{block:ifloadmore}
-<a id="more" style="cursor:help">load more posts</a>
-{/block:ifloadmore}
-
-{block:Pagination}<div id="pagination">{block:previouspage}<a href="{PreviousPage}">prev</a>{/block:PreviousPage}{block:JumpPagination length="4"}{block:CurrentPage}<span class="current_page">{PageNumber}</span>{/block:CurrentPage}{block:JumpPage}<a class="jump_page" href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<a class="next" href="{NextPage}">next</a>{/block:nextpage}</div>{/block:Pagination}
-</footer>
-{/block:indexpage}
-
-</div>
- 
-{block:ContentSource}<!– {SourceURL}{block:SourceLogo}<img src=“{BlackLogoURL}” width=“{LogoWidth}” height=“{LogoHeight}” alt=“{SourceTitle}” /> {/block:SourceLogo}{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} –>{/block:ContentSource}{block:ReblogParent}{/block:ReblogParent}
- 
-<div id="fuckchad"><a href="http://odeysseus.tumblr.com">O</a></div>
-
-{block:ifscrolltotop}
-<div class="sc"> <a href="#">scroll to top</a></div>
-{/block:ifscrolltotop}
-
-{block:indexpage}{block:ifinfinitescroll}
-<script src="http://static.tumblr.com/wgijwsy/u2vm2hxv6/jquery.infinitescroll.min.js"></script>
-{/block:ifinfinitescroll}{/block:indexpage}
- 
-<script>
-$(document).ready(function(){
-    var $container = $('.entries');
-        {block:ifinfinitescroll}
-        $container.infinitescroll({
-            itemSelector: '.posts',
-            navSelector: '#pagination',
-            nextSelector: '.next',
-            loadingImg: '',
-            loadingText: '',
-            doneText: 'no more posts',
-            bufferPx: 2000,
-            {block:ifloadmore}
-            errorCallback: function () {
-                jQuery ('a#more').delay(50).fadeOut();
-                $('.posts').last().after($('a#more'));
-            }
-            {/block:ifloadmore}
-        },
-        function( newElements ) {
-            var $newElems = $( newElements );
-            $newElems.find('.photo-slideshow').pxuPhotoset({
-                lightbox: true,
-                rounded: false,
-                gutter: '1px',
-                photoset: '.photo-slideshow',
-                photoWrap: '.photo-data',
-                photo: '.pxu-photo'
-            })
-            resizeVideos();
-   $newElems.find('iframe.tumblr_audio_player').load( function() {
-         $('iframe.tumblr_audio_player').contents().find("head")
-            .append($("<style type='text/css'> .audio-player{background:#fff !important} </style>"));
-      });
-    });
-   
-        {block:ifloadmore}
-        $(window).unbind('.infscr');
-            $('a#more').click(function(){
-               $container.infinitescroll('retrieve');return false;
-               $('.posts').last().after($('a#more'));
-            });
-        {/block:ifloadmore}
-        {/block:ifinfinitescroll}
-});
-</script>
 </body>
  
 </html>
